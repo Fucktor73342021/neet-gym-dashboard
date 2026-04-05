@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS — Warrior Dashboard</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=Rajdhani:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════════
+       SIDEBAR
+  ════════════════════════════════════════════════ -->
+  <aside class="sidebar" role="navigation" aria-label="Main navigation">
+
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-title">NEXUS</div>
+      <div class="sidebar__logo-sub">WARRIOR PROTOCOL v2.0</div>
+    </div>
+
+    <div class="sidebar__user">
+      <div class="sidebar__avatar" aria-hidden="true">N</div>
+      <div>
+        <div class="sidebar__user-name">NAHID</div>
+        <div class="sidebar__user-rank">⚡ RANK: ELITE ASPIRANT</div>
+      </div>
+    </div>
+
+    <nav class="sidebar__nav">
+      <div class="nav__label">Navigation</div>
+      <ul class="nav__list" role="list">
+
+        <li class="nav__item">
+          <a class="nav__link is-active"
+             href="#"
+             data-section="dashboard"
+             role="button"
+             aria-current="page">
+            <svg class="nav__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <rect x="1" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="9" y="1" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="1" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="9" y="9" width="6" height="6" rx="1" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+            Dashboard
+            <span class="nav__badge">HOME</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a class="nav__link"
+             href="#"
+             data-section="gym"
+             role="button">
+            <svg class="nav__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M1 8h2M13 8h2M3 8h10M3 5v6M13 5v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            Gym Tracker
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a class="nav__link"
+             href="#"
+             data-section="diet"
+             role="button">
+            <svg class="nav__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M5 1v5a3 3 0 006 0V1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="8" y1="9" x2="8" y2="15" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            Diet Tracker
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a class="nav__link"
+             href="#"
+             data-section="neet"
+             role="button">
+            <svg class="nav__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <rect x="2" y="1" width="12" height="14" rx="1" stroke="currentColor" stroke-width="1.2"/>
+              <line x1="5" y1="5" x2="11" y2="5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="5" y1="8" x2="11" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              <line x1="5" y1="11" x2="8"  y2="11" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            NEET Tracker
+            <span class="nav__badge">620+</span>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <footer class="sidebar__footer">
+      <div class="sidebar__version">SYS v2.0.4</div>
+      <div class="sidebar__status">
+        <div class="status__dot" aria-hidden="true"></div>
+        <div class="status__text">SYSTEMS NOMINAL</div>
+      </div>
+    </footer>
+
+  </aside><!-- /sidebar -->
+
+
+  <!-- ════════════════════════════════════════════════
+       MAIN CONTENT AREA
+  ════════════════════════════════════════════════ -->
+  <div class="main-wrapper">
+
+    <!-- ── Top bar ──────────────────────────────── -->
+    <header class="topbar" role="banner">
+      <div class="topbar__breadcrumb">
+        NEXUS &nbsp;/&nbsp; <span id="topbar-section-label">DASHBOARD</span>
+      </div>
+      <div class="topbar__date" id="topbar-date">SAT · 05 APR 2025</div>
+      <div class="topbar__day-tag" id="topbar-day-tag">PUSH DAY</div>
+    </header>
+
+    <!-- ── Scrollable content ────────────────────── -->
+    <main class="content-area" id="content-area" role="main">
+
+
+      <!-- ══════════════════════════════════════════
+           § DASHBOARD SECTION
+      ══════════════════════════════════════════ -->
+      <section class="section is-active" id="section-dashboard" aria-label="Dashboard">
+
+        <!-- Greeting -->
+        <div class="greeting">
+          <div class="greeting__time-tag">// SATURDAY · PUSH DAY</div>
+          <h1 class="greeting__text">Good Morning, <em>Warrior</em></h1>
+          <p class="greeting__sub">Your mission continues. Every rep, every page, every question counts.</p>
+        </div>
+
+        <!-- Stat cards row -->
+        <div class="stat-cards" role="list">
+
+          <div class="card card--accent-amber" role="listitem">
+            <div class="card__label">Current Streak</div>
+            <div class="card__value card__value--amber" id="dash-streak">—</div>
+            <div class="card__sub">CONSECUTIVE DAYS</div>
+            <div class="streak-display" style="margin-top:14px;" aria-label="7-day streak view">
+              <div class="streak-pip is-filled" title="Day 1"></div>
+              <div class="streak-pip is-filled" title="Day 2"></div>
+              <div class="streak-pip is-filled" title="Day 3"></div>
+              <div class="streak-pip is-filled" title="Day 4"></div>
+              <div class="streak-pip is-filled" title="Day 5"></div>
+              <div class="streak-pip is-filled" title="Day 6"></div>
+              <div class="streak-pip is-today"  title="Today"></div>
+            </div>
+          </div>
+
+          <div class="card" role="listitem">
+            <div class="card__label">Overall Completion</div>
+            <div class="card__value" id="dash-overall-pct">—%</div>
+            <div class="card__sub">TODAY'S PROTOCOL</div>
+          </div>
+
+          <div class="card card--accent-green" role="listitem">
+            <div class="card__label">NEET Target</div>
+            <div class="card__value card__value--green">620+</div>
+            <div class="card__sub">SCORE OBJECTIVE</div>
+          </div>
+
+          <div class="card card--accent-purple" role="listitem">
+            <div class="card__label">Days to NEET</div>
+            <div class="card__value card__value--purple" id="dash-days-left">—</div>
+            <div class="card__sub">MISSION COUNTDOWN</div>
+          </div>
+
+        </div><!-- /stat-cards -->
+
+
+        <!-- Progress bars + Chart/Quote layout -->
+        <div class="grid grid--sidebar" style="gap:20px; align-items:start;">
+
+          <!-- Left: Progress bars + Chart -->
+          <div style="display:flex; flex-direction:column; gap:16px;">
+
+            <!-- Progress overview card -->
+            <div class="card">
+              <div class="card__title">TODAY'S PROTOCOL — PROGRESS</div>
+
+              <div class="progress-overview">
+
+                <div class="progress-group" role="group" aria-labelledby="prog-gym-label">
+                  <div class="progress-group__header">
+                    <span class="progress-group__name" id="prog-gym-label">💪 GYM</span>
+                    <span class="tag tag--green">PUSH DAY</span>
+                    <span class="progress-group__pct progress-group__pct--green" id="dash-gym-pct" aria-live="polite">0%</span>
+                  </div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-labelledby="prog-gym-label">
+                    <div class="progress-bar__fill progress-bar__fill--green" id="dash-gym-bar" style="width:0%"></div>
+                  </div>
+                </div>
+
+                <div class="progress-group" role="group" aria-labelledby="prog-diet-label">
+                  <div class="progress-group__header">
+                    <span class="progress-group__name" id="prog-diet-label">🥗 DIET</span>
+                    <span class="tag tag--amber">SLOW-CARB</span>
+                    <span class="progress-group__pct progress-group__pct--amber" id="dash-diet-pct" aria-live="polite">0%</span>
+                  </div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-labelledby="prog-diet-label">
+                    <div class="progress-bar__fill progress-bar__fill--amber" id="dash-diet-bar" style="width:0%"></div>
+                  </div>
+                </div>
+
+                <div class="progress-group" role="group" aria-labelledby="prog-neet-label">
+                  <div class="progress-group__header">
+                    <span class="progress-group__name" id="prog-neet-label">📖 NEET</span>
+                    <span class="tag tag--purple">BIO FOCUS</span>
+                    <span class="progress-group__pct progress-group__pct--purple" id="dash-neet-pct" aria-live="polite">0%</span>
+                  </div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-labelledby="prog-neet-label">
+                    <div class="progress-bar__fill progress-bar__fill--purple" id="dash-neet-bar" style="width:0%"></div>
+                  </div>
+                </div>
+
+              </div><!-- /progress-overview -->
+            </div><!-- /card -->
+
+            <!-- Chart placeholder -->
+            <div class="card">
+              <div class="card__title">WEEKLY PERFORMANCE GRAPH</div>
+              <div class="chart-placeholder" id="chart-weekly" aria-label="Chart area — graph will render here">
+                <div class="chart-placeholder__label">
+                  <span class="chart-placeholder__icon" aria-hidden="true">📊</span>
+                  CHART.JS GRAPH MOUNTS HERE<br>
+                  <span style="font-size:0.55rem; opacity:0.6;">GYM · DIET · NEET — 7-DAY VIEW</span>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /left col -->
+
+          <!-- Right: Quote -->
+          <div class="card">
+            <div class="card__title">WARRIOR'S CREED</div>
+            <div class="quote-card" id="dash-quote">
+              <p class="quote-card__text">
+                "The pain you feel today will be the strength you feel tomorrow. Push through — the government seat is waiting."
+              </p>
+              <div class="quote-card__author">// DAILY DIRECTIVE · AUTO-GENERATED</div>
+            </div>
+          </div>
+
+        </div><!-- /grid -->
+
+      </section><!-- /dashboard -->
+
+
+      <!-- ══════════════════════════════════════════
+           § GYM TRACKER SECTION
+      ══════════════════════════════════════════ -->
+      <section class="section" id="section-gym" aria-label="Gym Tracker">
+
+        <div class="section-header">
+          <div class="section-header__eyebrow">// MODULE_02</div>
+          <h2 class="section-header__title">GYM TRACKER</h2>
+        </div>
+
+        <!-- Day Tabs -->
+        <div class="tabs" role="tablist" aria-label="Workout days">
+          <button class="tab-btn is-active"
+                  role="tab"
+                  aria-selected="true"
+                  aria-controls="tab-push"
+                  id="tab-btn-push"
+                  data-tab="push">
+            MON — PUSH DAY
+          </button>
+          <button class="tab-btn"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="tab-pull"
+                  id="tab-btn-pull"
+                  data-tab="pull">
+            WED — PULL DAY
+          </button>
+          <button class="tab-btn"
+                  role="tab"
+                  aria-selected="false"
+                  aria-controls="tab-legs"
+                  id="tab-btn-legs"
+                  data-tab="legs">
+            FRI — LEG DAY
+          </button>
+        </div>
+
+        <!-- ── PUSH DAY ─────────────────────────── -->
+        <div class="tab-content is-active"
+             id="tab-push"
+             role="tabpanel"
+             aria-labelledby="tab-btn-push">
+
+          <div class="exercise-columns-header" aria-hidden="true">
+            <div class="exercise-columns-header__col">✓</div>
+            <div class="exercise-columns-header__col">EXERCISE</div>
+            <div class="exercise-columns-header__col">WEIGHT (kg)</div>
+            <div class="exercise-columns-header__col">SETS</div>
+          </div>
+
+          <!-- CHEST -->
+          <div class="exercise-section-header">
+            <span class="exercise-section-header__title">CHEST</span>
+            <div class="exercise-section-header__line" aria-hidden="true"></div>
+            <span class="tag tag--cyan">PUSH</span>
+          </div>
+
+          <div class="exercise-list" role="list">
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="push-01" aria-label="Incline Dumbbell Press done" />
+              <label class="exercise-row__name" for="push-01">Incline Dumbbell Press</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Incline Dumbbell Press weight in kg" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Incline Dumbbell Press sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="push-02" aria-label="Flat Dumbbell Press done" />
+              <label class="exercise-row__name" for="push-02">Flat Dumbbell Press</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Flat Dumbbell Press weight in kg" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Flat Dumbbell Press sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="push-03" aria-label="Pec Deck Fly done" />
+              <label class="exercise-row__name" for="push-03">Pec Deck Fly</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Pec Deck Fly weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Pec Deck Fly sets" />
+            </div>
+
+          </div><!-- /chest list -->
+
+          <!-- TRICEPS -->
+          <div class="exercise-section-header">
+            <span class="exercise-section-header__title">TRICEPS</span>
+            <div class="exercise-section-header__line" aria-hidden="true"></div>
+            <span class="tag tag--cyan">PUSH</span>
+          </div>
+
+          <div class="exercise-list" role="list">
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="push-04" aria-label="Triceps Rope Pushdown done" />
+              <label class="exercise-row__name" for="push-04">Triceps Rope Pushdown</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Triceps Rope Pushdown weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Triceps Rope Pushdown sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="push-05" aria-label="Reverse Grip Pushdown done" />
+              <label class="exercise-row__name" for="push-05">Reverse Grip Pushdown</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Reverse Grip Pushdown weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Reverse Grip Pushdown sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="push-06" aria-label="Overhead Triceps Extension done" />
+              <label class="exercise-row__name" for="push-06">Overhead Triceps Extension</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Overhead Triceps Extension weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Overhead Triceps Extension sets" />
+            </div>
+
+          </div><!-- /triceps list -->
+
+          <!-- SHOULDERS + ABS -->
+          <div class="exercise-section-header">
+            <span class="exercise-section-header__title">SHOULDERS &amp; ABS</span>
+            <div class="exercise-section-header__line" aria-hidden="true"></div>
+            <span class="tag tag--cyan">PUSH</span>
+          </div>
+
+          <div class="exercise-list" role="list">
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="push-07" aria-label="Shoulder Press done" />
+              <label class="exercise-row__name" for="push-07">Shoulder Press</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Shoulder Press weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Shoulder Press sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="push-08" aria-label="Crunches done" />
+              <label class="exercise-row__name" for="push-08">Crunches</label>
+              <input type="number" class="exercise-row__input" placeholder="reps" min="0" step="1" aria-label="Crunches reps" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Crunches sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="push-09" aria-label="Leg Raises done" />
+              <label class="exercise-row__name" for="push-09">Leg Raises</label>
+              <input type="number" class="exercise-row__input" placeholder="reps" min="0" step="1" aria-label="Leg Raises reps" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Leg Raises sets" />
+            </div>
+
+          </div><!-- /shoulders-abs list -->
+
+        </div><!-- /tab-push -->
+
+
+        <!-- ── PULL DAY ─────────────────────────── -->
+        <div class="tab-content"
+             id="tab-pull"
+             role="tabpanel"
+             aria-labelledby="tab-btn-pull">
+
+          <div class="exercise-columns-header" aria-hidden="true">
+            <div class="exercise-columns-header__col">✓</div>
+            <div class="exercise-columns-header__col">EXERCISE</div>
+            <div class="exercise-columns-header__col">WEIGHT (kg)</div>
+            <div class="exercise-columns-header__col">SETS</div>
+          </div>
+
+          <!-- BACK -->
+          <div class="exercise-section-header">
+            <span class="exercise-section-header__title">BACK</span>
+            <div class="exercise-section-header__line" aria-hidden="true"></div>
+            <span class="tag tag--purple">PULL</span>
+          </div>
+
+          <div class="exercise-list" role="list">
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="pull-01" aria-label="Horizontal Pull done" />
+              <label class="exercise-row__name" for="pull-01">Horizontal Pull</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Horizontal Pull weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Horizontal Pull sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="pull-02" aria-label="Wide Grip Lat Pull done" />
+              <label class="exercise-row__name" for="pull-02">Wide Grip Lat Pull</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Wide Grip Lat Pull weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Wide Grip Lat Pull sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="pull-03" aria-label="Narrow Grip Lat Pull done" />
+              <label class="exercise-row__name" for="pull-03">Narrow Grip Lat Pull</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Narrow Grip Lat Pull weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Narrow Grip Lat Pull sets" />
+            </div>
+
+          </div>
+
+          <!-- REAR DELTS -->
+          <div class="exercise-section-header">
+            <span class="exercise-section-header__title">REAR DELTS</span>
+            <div class="exercise-section-header__line" aria-hidden="true"></div>
+            <span class="tag tag--purple">PULL</span>
+          </div>
+
+          <div class="exercise-list" role="list">
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="pull-04" aria-label="Face Pull done" />
+              <label class="exercise-row__name" for="pull-04">Face Pull</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Face Pull weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Face Pull sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="pull-05" aria-label="Cable Shoulder Extension done" />
+              <label class="exercise-row__name" for="pull-05">Cable Shoulder Extension</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Cable Shoulder Extension weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Cable Shoulder Extension sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="pull-06" aria-label="Reverse Pec Deck Fly done" />
+              <label class="exercise-row__name" for="pull-06">Reverse Pec Deck Fly</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Reverse Pec Deck Fly weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Reverse Pec Deck Fly sets" />
+            </div>
+
+          </div>
+
+          <!-- BICEPS -->
+          <div class="exercise-section-header">
+            <span class="exercise-section-header__title">BICEPS</span>
+            <div class="exercise-section-header__line" aria-hidden="true"></div>
+            <span class="tag tag--purple">PULL</span>
+          </div>
+
+          <div class="exercise-list" role="list">
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="pull-07" aria-label="Incline Dumbbell Curl done" />
+              <label class="exercise-row__name" for="pull-07">Incline Dumbbell Curl</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Incline Dumbbell Curl weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Incline Dumbbell Curl sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="pull-08" aria-label="Dumbbell Curl done" />
+              <label class="exercise-row__name" for="pull-08">Dumbbell Curl</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Dumbbell Curl weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Dumbbell Curl sets" />
+            </div>
+
+          </div>
+
+        </div><!-- /tab-pull -->
+
+
+        <!-- ── LEG DAY ──────────────────────────── -->
+        <div class="tab-content"
+             id="tab-legs"
+             role="tabpanel"
+             aria-labelledby="tab-btn-legs">
+
+          <div class="exercise-columns-header" aria-hidden="true">
+            <div class="exercise-columns-header__col">✓</div>
+            <div class="exercise-columns-header__col">EXERCISE</div>
+            <div class="exercise-columns-header__col">WEIGHT (kg)</div>
+            <div class="exercise-columns-header__col">SETS</div>
+          </div>
+
+          <!-- QUADS -->
+          <div class="exercise-section-header">
+            <span class="exercise-section-header__title">QUADS &amp; GLUTES</span>
+            <div class="exercise-section-header__line" aria-hidden="true"></div>
+            <span class="tag tag--red">LEGS</span>
+          </div>
+
+          <div class="exercise-list" role="list">
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="leg-01" aria-label="Squats done" />
+              <label class="exercise-row__name" for="leg-01">Squats</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Squats weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Squats sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="leg-02" aria-label="Sumo Squats done" />
+              <label class="exercise-row__name" for="leg-02">Sumo Squats</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Sumo Squats weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Sumo Squats sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="leg-03" aria-label="Leg Extension done" />
+              <label class="exercise-row__name" for="leg-03">Leg Extension</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Leg Extension weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Leg Extension sets" />
+            </div>
+
+          </div>
+
+          <!-- CALVES + ABS -->
+          <div class="exercise-section-header">
+            <span class="exercise-section-header__title">CALVES &amp; ABS</span>
+            <div class="exercise-section-header__line" aria-hidden="true"></div>
+            <span class="tag tag--red">LEGS</span>
+          </div>
+
+          <div class="exercise-list" role="list">
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="leg-04" aria-label="Calf Raises done" />
+              <label class="exercise-row__name" for="leg-04">Calf Raises</label>
+              <input type="number" class="exercise-row__input" placeholder="kg" min="0" step="0.5" aria-label="Calf Raises weight" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Calf Raises sets" />
+            </div>
+
+            <div class="exercise-row" role="listitem">
+              <input type="checkbox" class="checkbox-row__input" id="leg-05" aria-label="Abs done" />
+              <label class="exercise-row__name" for="leg-05">Abs</label>
+              <input type="number" class="exercise-row__input" placeholder="reps" min="0" step="1" aria-label="Abs reps" />
+              <input type="number" class="exercise-row__input" placeholder="sets" min="0" step="1" aria-label="Abs sets" />
+            </div>
+
+          </div>
+
+        </div><!-- /tab-legs -->
+
+
+        <!-- ── Daily Step Tracker ───────────────── -->
+        <div class="step-tracker" role="group" aria-labelledby="step-tracker-label">
+          <div class="step-tracker__icon" aria-hidden="true">🚶</div>
+          <div class="step-tracker__info">
+            <div class="step-tracker__label" id="step-tracker-label">DAILY STEPS</div>
+            <div class="step-tracker__target">TARGET: 2,000 STEPS</div>
+          </div>
+          <div class="step-tracker__controls">
+            <label for="step-input" style="font-family:var(--font-mono);font-size:0.62rem;color:var(--text-muted);letter-spacing:2px;">STEPS LOGGED</label>
+            <input type="number"
+                   class="step-tracker__input"
+                   id="step-input"
+                   placeholder="0"
+                   min="0"
+                   step="100"
+                   aria-label="Steps logged today" />
+            <input type="checkbox"
+                   class="checkbox-row__input"
+                   id="step-complete"
+                   aria-label="Mark 2000 steps goal as complete" />
+            <label for="step-complete" style="font-family:var(--font-mono);font-size:0.62rem;color:var(--text-muted);letter-spacing:1px; cursor:pointer;">GOAL MET</label>
+          </div>
+        </div>
+
+      </section><!-- /gym -->
+
+
+      <!-- ══════════════════════════════════════════
+           § DIET TRACKER SECTION
+      ══════════════════════════════════════════ -->
+      <section class="section" id="section-diet" aria-label="Diet Tracker">
+
+        <div class="section-header">
+          <div class="section-header__eyebrow">// MODULE_03</div>
+          <h2 class="section-header__title">DIET TRACKER</h2>
+        </div>
+
+        <!-- Diet stat cards (values populated by JS) -->
+        <div class="diet-stat-cards" role="list">
+
+          <div class="card card--accent-cyan" role="listitem">
+            <div class="card__label">Body Weight</div>
+            <div class="card__value" id="diet-weight-display">—</div>
+            <div class="card__sub">KILOGRAMS</div>
+          </div>
+
+          <div class="card card--accent-amber" role="listitem">
+            <div class="card__label">Calories Consumed</div>
+            <div class="card__value card__value--amber" id="diet-cal-display">—</div>
+            <div class="card__sub">KCAL TODAY</div>
+          </div>
+
+          <div class="card card--accent-green" role="listitem">
+            <div class="card__label">Water Intake</div>
+            <div class="card__value card__value--green" id="diet-water-display">—</div>
+            <div class="card__sub">LITRES TODAY</div>
+          </div>
+
+        </div>
+
+        <!-- Input card -->
+        <div class="card">
+          <div class="card__title">LOG TODAY'S METRICS</div>
+
+          <div class="grid grid--3" style="gap: 24px;">
+
+            <div class="diet-input-block">
+              <div class="diet-input-block__icon" aria-hidden="true">⚖️</div>
+              <label class="diet-input-block__label" for="diet-weight">Body Weight</label>
+              <input type="number"
+                     class="diet-input-block__input"
+                     id="diet-weight"
+                     placeholder="72.0"
+                     min="30"
+                     max="200"
+                     step="0.1"
+                     aria-label="Body weight in kilograms" />
+              <div class="diet-input-block__unit">KILOGRAMS (kg)</div>
+            </div>
+
+            <div class="diet-input-block">
+              <div class="diet-input-block__icon" aria-hidden="true">🔥</div>
+              <label class="diet-input-block__label" for="diet-calories">Calories Consumed</label>
+              <input type="number"
+                     class="diet-input-block__input"
+                     id="diet-calories"
+                     placeholder="1800"
+                     min="0"
+                     max="6000"
+                     step="10"
+                     aria-label="Calories consumed today" />
+              <div class="diet-input-block__unit">KILOCALORIES (kcal)</div>
+            </div>
+
+            <div class="diet-input-block">
+              <div class="diet-input-block__icon" aria-hidden="true">💧</div>
+              <label class="diet-input-block__label" for="diet-water">Water Intake</label>
+              <input type="number"
+                     class="diet-input-block__input"
+                     id="diet-water"
+                     placeholder="2.5"
+                     min="0"
+                     max="10"
+                     step="0.25"
+                     aria-label="Water intake in litres" />
+              <div class="diet-input-block__unit">LITRES (L)</div>
+            </div>
+
+          </div><!-- /grid -->
+        </div><!-- /card -->
+
+      </section><!-- /diet -->
+
+
+      <!-- ══════════════════════════════════════════
+           § NEET TRACKER SECTION
+      ══════════════════════════════════════════ -->
+      <section class="section" id="section-neet" aria-label="NEET Tracker">
+
+        <div class="section-header">
+          <div class="section-header__eyebrow">// MODULE_04</div>
+          <h2 class="section-header__title">NEET TRACKER</h2>
+        </div>
+
+        <!-- Daily targets -->
+        <div class="neet-targets" role="list">
+
+          <div class="target-card" role="listitem">
+            <div class="target-card__icon" aria-hidden="true">❓</div>
+            <div class="target-card__label">DAILY QUESTIONS TARGET</div>
+            <div class="target-card__target">200</div>
+            <div class="target-card__sub">Questions per day</div>
+            <div class="target-card__input-row">
+              <label class="target-card__input-label" for="neet-questions">COMPLETED</label>
+              <input type="number"
+                     class="target-card__input"
+                     id="neet-questions"
+                     placeholder="0"
+                     min="0"
+                     max="300"
+                     step="1"
+                     aria-label="Questions completed today" />
+            </div>
+          </div>
+
+          <div class="target-card" role="listitem">
+            <div class="target-card__icon" aria-hidden="true">📄</div>
+            <div class="target-card__label">DAILY PAGES TARGET</div>
+            <div class="target-card__target target-card__target--amber">50</div>
+            <div class="target-card__sub">Pages per day</div>
+            <div class="target-card__input-row">
+              <label class="target-card__input-label" for="neet-pages">COMPLETED</label>
+              <input type="number"
+                     class="target-card__input"
+                     id="neet-pages"
+                     placeholder="0"
+                     min="0"
+                     max="100"
+                     step="1"
+                     aria-label="Pages completed today" />
+            </div>
+          </div>
+
+        </div><!-- /neet-targets -->
+
+
+        <!-- Subject progress cards -->
+        <div class="section-header" style="margin-bottom:16px;">
+          <div class="section-header__eyebrow">// SUBJECT PROGRESS</div>
+          <h3 class="section-header__title" style="font-size:1rem; letter-spacing:3px;">SUBJECT BREAKDOWN</h3>
+        </div>
+
+        <div class="subject-grid" role="list">
+
+          <!-- PHYSICS -->
+          <div class="subject-card subject-card--physics" role="listitem">
+            <div class="subject-card__name">⚡ PHYSICS</div>
+            <div class="subject-card__rows">
+
+              <div class="subject-row">
+                <div class="subject-row__header">
+                  <span class="subject-row__label">CHAPTERS DONE</span>
+                  <span class="subject-row__value" id="phy-chapters-display">—</span>
+                </div>
+                <input type="number"
+                       class="subject-row__input"
+                       id="phy-chapters"
+                       placeholder="0"
+                       min="0"
+                       aria-label="Physics chapters completed" />
+              </div>
+
+              <div class="subject-row">
+                <div class="subject-row__header">
+                  <span class="subject-row__label">QUESTIONS TODAY</span>
+                  <span class="subject-row__value" id="phy-questions-display">—</span>
+                </div>
+                <input type="number"
+                       class="subject-row__input"
+                       id="phy-questions"
+                       placeholder="0"
+                       min="0"
+                       aria-label="Physics questions done today" />
+              </div>
+
+              <div class="subject-row">
+                <div class="subject-row__header">
+                  <span class="subject-row__label">ACCURACY %</span>
+                  <span class="subject-row__value" id="phy-accuracy-display">—</span>
+                </div>
+                <input type="number"
+                       class="subject-row__input"
+                       id="phy-accuracy"
+                       placeholder="0"
+                       min="0"
+                       max="100"
+                       step="1"
+                       aria-label="Physics accuracy percentage" />
+              </div>
+
+              <div class="progress-group" style="margin-top:4px;">
+                <div class="progress-bar">
+                  <div class="progress-bar__fill" id="phy-progress-bar" style="width:0%"></div>
+                </div>
+              </div>
+
+            </div>
+          </div><!-- /physics -->
+
+
+          <!-- CHEMISTRY -->
+          <div class="subject-card subject-card--chemistry" role="listitem">
+            <div class="subject-card__name">🧪 CHEMISTRY</div>
+            <div class="subject-card__rows">
+
+              <div class="subject-row">
+                <div class="subject-row__header">
+                  <span class="subject-row__label">CHAPTERS DONE</span>
+                  <span class="subject-row__value" id="chem-chapters-display">—</span>
+                </div>
+                <input type="number"
+                       class="subject-row__input"
+                       id="chem-chapters"
+                       placeholder="0"
+                       min="0"
+                       aria-label="Chemistry chapters completed" />
+              </div>
+
+              <div class="subject-row">
+                <div class="subject-row__header">
+                  <span class="subject-row__label">QUESTIONS TODAY</span>
+                  <span class="subject-row__value" id="chem-questions-display">—</span>
+                </div>
+                <input type="number"
+                       class="subject-row__input"
+                       id="chem-questions"
+                       placeholder="0"
+                       min="0"
+                       aria-label="Chemistry questions done today" />
+              </div>
+
+              <div class="subject-row">
+                <div class="subject-row__header">
+                  <span class="subject-row__label">ACCURACY %</span>
+                  <span class="subject-row__value" id="chem-accuracy-display">—</span>
+                </div>
+                <input type="number"
+                       class="subject-row__input"
+                       id="chem-accuracy"
+                       placeholder="0"
+                       min="0"
+                       max="100"
+                       step="1"
+                       aria-label="Chemistry accuracy percentage" />
+              </div>
+
+              <div class="progress-group" style="margin-top:4px;">
+                <div class="progress-bar">
+                  <div class="progress-bar__fill progress-bar__fill--amber" id="chem-progress-bar" style="width:0%"></div>
+                </div>
+              </div>
+
+            </div>
+          </div><!-- /chemistry -->
+
+
+          <!-- BIOLOGY -->
+          <div class="subject-card subject-card--biology" role="listitem">
+            <div class="subject-card__name">🧬 BIOLOGY</div>
+            <div class="subject-card__rows">
+
+              <div class="subject-row">
+                <div class="subject-row__header">
+                  <span class="subject-row__label">CHAPTERS DONE</span>
+                  <span class="subject-row__value" id="bio-chapters-display">—</span>
+                </div>
+                <input type="number"
+                       class="subject-row__input"
+                       id="bio-chapters"
+                       placeholder="0"
+                       min="0"
+                       aria-label="Biology chapters completed" />
+              </div>
+
+              <div class="subject-row">
+                <div class="subject-row__header">
+                  <span class="subject-row__label">QUESTIONS TODAY</span>
+                  <span class="subject-row__value" id="bio-questions-display">—</span>
+                </div>
+                <input type="number"
+                       class="subject-row__input"
+                       id="bio-questions"
+                       placeholder="0"
+                       min="0"
+                       aria-label="Biology questions done today" />
+              </div>
+
+              <div class="subject-row">
+                <div class="subject-row__header">
+                  <span class="subject-row__label">ACCURACY %</span>
+                  <span class="subject-row__value" id="bio-accuracy-display">—</span>
+                </div>
+                <input type="number"
+                       class="subject-row__input"
+                       id="bio-accuracy"
+                       placeholder="0"
+                       min="0"
+                       max="100"
+                       step="1"
+                       aria-label="Biology accuracy percentage" />
+              </div>
+
+              <div class="progress-group" style="margin-top:4px;">
+                <div class="progress-bar">
+                  <div class="progress-bar__fill progress-bar__fill--green" id="bio-progress-bar" style="width:0%"></div>
+                </div>
+              </div>
+
+            </div>
+          </div><!-- /biology -->
+
+        </div><!-- /subject-grid -->
+
+      </section><!-- /neet -->
+
+
+    </main><!-- /content-area -->
+  </div><!-- /main-wrapper -->
+
+  <script src="script.js"></script>
+
+</body>
+</html>
