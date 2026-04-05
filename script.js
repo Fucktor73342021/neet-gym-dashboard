@@ -223,7 +223,6 @@ function switchSection(target, navLinks, sections, breadcrumb) {
       timer:     'FOCUS TIMER',
       journal:   'DAILY JOURNAL',
     };
-    };
     breadcrumb.textContent = labelMap[target] || target.toUpperCase();
   }
 
